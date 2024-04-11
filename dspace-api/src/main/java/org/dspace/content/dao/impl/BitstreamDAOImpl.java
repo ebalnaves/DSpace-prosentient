@@ -106,7 +106,7 @@ public class BitstreamDAOImpl extends AbstractHibernateDSODAO<Bitstream> impleme
         Query query = createQuery(context, "select b from Bitstream b " +
             "join b.bundles bitBundles " +
             "join bitBundles.items item " +
-            "WHERE :item IN item");
+            "WHERE :item IN item ORDER BY sequence_id");
 
         query.setParameter("item", item);
 
